@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+
+<h3>Simple IATF App</h3>
+
+<br>
+
+<h5>Navigation:</h5>
+    <nav class="navbar">
+        <div class="container">
+
+            <div class="nav-links">
+                <ul class="nav-group">
+
+                    <li class="nav-item">
+                        <a href="{% url 'index' %}">
+                            <i>Index</i>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{% url 'overview' %}">
+                            <i>Overview</i>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<br>
+
+{% block page_content %}
+{# specific info of page #}
+{% endblock %}
+
+</body>
+</html>

@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-</head>
-<body>
-
-<br><br>
+{% extends 'base.html' %}
+{% block page_content %}
 
 <div>
     <h5>Create a process step</h5>
@@ -26,6 +17,7 @@
 <div>
     <table style="border: 1px solid #342525;">
         <tr>
+            <th style="border: 1px solid #342525;">ID:</th>
             <th style="border: 1px solid #342525;">Step Name:</th>
             <th style="border: 1px solid #342525;">Responsible:</th>
             <th style="border: 1px solid #342525;">Evidence:</th>
@@ -33,6 +25,7 @@
 
         {% for process_step in process_steps %}
         <tr style="border: 1px solid #342525;">
+            <td style="border: 1px solid #342525;">{{ process_step.pk }}</td>
             <td style="border: 1px solid #342525;">{{ process_step.step_name }}</td>
             <td style="border: 1px solid #342525;">{{ process_step.responsible }}</td>
             <td style="border: 1px solid #342525;">{{ process_step.evidence }}</td>
@@ -42,14 +35,4 @@
     </table>
 </div>
 
-{#        list:#}
-{#    {% for process_step in process_steps %}#}
-{#        <div>#}
-{#            {{ process_step.step_name }}#}
-{#            {{ process_step.responsible }}#}
-{#            {{ process_step.evidence }}#}
-{#        </div>#}
-{#    {% endfor %}#}
-
-</body>
-</html>
+{% endblock %}
